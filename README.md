@@ -217,5 +217,3 @@ If you use this pipeline with the example dataset, please cite the original stud
 Issues and pull requests are welcome. If you spot a bug or have an improvement in mind, feel free to open an issue.
 
 ```
-
-```
