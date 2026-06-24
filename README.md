@@ -35,8 +35,6 @@ The pipeline itself has no hard dependency on this environment — it can equall
 
 
 ```
-
-```
           Raw FASTQ
               │
               ▼
@@ -64,10 +62,6 @@ The pipeline itself has no hard dependency on this environment — it can equall
       Final Filtered VCF
 
 ```
-
-```
-
----
 
 ## Features
 
