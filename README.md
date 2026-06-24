@@ -21,9 +21,9 @@ This pipeline is built to mirror a real clinical genomics workflow: align WGS re
 
 ## Computing Environment
 
-This pipeline was developed and executed on **C-DAC's iCloud** computing platform, using a **Jupyter Notebook terminal** as the working interface for running shell commands, Nextflow, and bioinformatics tools.
+This pipeline was developed and executed on **C-DAC's iceCloud** computing platform, using a **Jupyter Notebook terminal** as the working interface for running shell commands, Nextflow, and bioinformatics tools.
 
-- **Platform:** C-DAC iCloud (remote cloud compute instance)
+- **Platform:** C-DAC iceCloud (remote cloud compute instance)
 - **Interface:** Jupyter Notebook terminal (browser-based shell access)
 - **Execution:** All commands — environment setup, tool installation, and pipeline runs — were carried out directly in the Jupyter terminal rather than a local laptop terminal
 
