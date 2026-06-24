@@ -213,10 +213,6 @@ ngs-pipelineTB/
 
 ---
 
-## License
-
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
-
 ## Citation
 
 If you use this pipeline with the example dataset, please cite the original study associated with SRA accession **ERR3275683** (BioProject PRJEB32037) on NCBI.
