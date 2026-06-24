@@ -39,3 +39,4 @@ reference/*.dict
 
 # OS
 .DS_Store
+reference/
