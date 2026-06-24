@@ -1,6 +1,3 @@
-Here is the complete, compiled markdown document formatted exactly as raw code matching the source layout seen in `image_cc1ba0.png`:
-
-```markdown
 # ngs-pipelineTB
 
 A **Nextflow DSL2** pipeline for reference-based variant calling in *Mycobacterium tuberculosis* whole-genome sequencing (WGS) data. It performs quality control, alignment, sorting, and variant calling, producing a filtered VCF that can be screened for clinically relevant drug-resistance mutations.
