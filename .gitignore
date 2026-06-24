@@ -1,0 +1,41 @@
+# Nextflow
+work/
+.nextflow/
+.nextflow.log
+.timeline.*
+.report.*
+.trace.*
+.dag.*
+
+# Results
+results/
+
+# Raw data
+data/
+
+# Reference indexes
+reference/*.amb
+reference/*.ann
+reference/*.bwt
+reference/*.pac
+reference/*.sa
+reference/*.fai
+reference/*.dict
+
+# Alignment files
+*.sam
+*.bam
+*.bai
+
+# Variant files
+*.vcf
+*.vcf.gz
+*.tbi
+*.csi
+
+# FastQC outputs
+*_fastqc.html
+*_fastqc.zip
+
+# OS
+.DS_Store
