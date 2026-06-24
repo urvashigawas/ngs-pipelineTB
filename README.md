@@ -188,18 +188,6 @@ ngs-pipelineTB/
 
 ```
 
----
-
-## Roadmap
-
-* [ ] Variant annotation with SnpEff
-* [ ] MultiQC summary report
-* [ ] Dockerfile / Conda environment file for full reproducibility
-* [ ] GitHub Actions CI for automated testing
-* [ ] Automatic reference + SRA download helper script
-
----
-
 ## Citation
 
 If you use this pipeline with the example dataset, please cite the original study associated with SRA accession **ERR3275683** (BioProject PRJEB32037) on NCBI.
