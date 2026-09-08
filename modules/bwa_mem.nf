@@ -6,7 +6,7 @@ process BWA_MEM {
 
     input:
     path reads
-    path refdir
+    tuple path(reference), path(index_files)
 
     output:
     path "${reads.simpleName}.sam"
@@ -15,7 +15,7 @@ process BWA_MEM {
     """
     bwa mem \
         -t ${task.cpus} \
-        H37Rv/H37Rv.fasta \
+        ${reference} \
         ${reads} \
         > ${reads.simpleName}.sam
     """
