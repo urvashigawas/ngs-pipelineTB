@@ -1,0 +1,54 @@
+name: NGS Pipeline CI
+
+on:
+  push:
+    branches:
+      - main
+      - ci-cd-upgrade
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install Nextflow
+        run: |
+          curl -s https://get.nextflow.io | bash
+          sudo mv nextflow /usr/local/bin/
+          nextflow -version
+
+      - name: Install bioinformatics tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            bwa \
+            samtools \
+            bcftools \
+            fastqc
+
+      - name: Run pipeline test
+        run: |
+          nextflow run main.nf -profile test
+
+      - name: Check expected outputs
+        run: |
+          test -s results/test/alignment/sample.sam
+          test -s results/test/bam/sample.sorted.bam
+          test -s results/test/bam/sample.sorted.bam.bai
+          test -s results/test/fastqc/sample_fastqc.html
+          test -s results/test/variants/variants.vcf.gz
+          test -s results/test/filtered/filtered.vcf
+
+          echo "All expected pipeline outputs are present."

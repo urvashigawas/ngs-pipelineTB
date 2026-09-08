@@ -4,14 +4,19 @@ process BCFTOOLS_CALL {
 
     input:
     path bam
-    path refdir
+    tuple path(reference), path(index_files)
 
     output:
     path "variants.vcf.gz"
 
     script:
     """
-    bcftools mpileup -f H37Rv/H37Rv.fasta ${bam} | \
-    bcftools call -mv -Oz -o variants.vcf.gz
+    bcftools mpileup \
+        -f ${reference} \
+        ${bam} | \
+    bcftools call \
+        -mv \
+        -Oz \
+        -o variants.vcf.gz
     """
 }
