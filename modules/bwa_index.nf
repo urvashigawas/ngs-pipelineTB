@@ -3,16 +3,14 @@ process BWA_INDEX {
     tag "H37Rv"
 
     input:
-    path refdir
+    path reference
 
     output:
-    path "H37Rv"
+    tuple path("H37Rv.fasta"), path("H37Rv.fasta.*"), emit: indexed_reference
 
     script:
     """
-    cp -r ${refdir} H37Rv
-
-    bwa index H37Rv/H37Rv.fasta
-
+    bwa index H37Rv.fasta
+    samtools faidx H37Rv.fasta
     """
 }

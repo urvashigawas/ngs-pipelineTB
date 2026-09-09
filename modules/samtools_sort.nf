@@ -12,6 +12,9 @@ process SAMTOOLS_SORT {
 
     script:
     """
-    samtools sort -o ${bam.simpleName}.sorted.bam ${bam}
+    samtools sort \
+        -@ ${task.cpus} \
+        -o ${bam.simpleName}.sorted.bam \
+        ${bam}
     """
 }

@@ -6,10 +6,17 @@ process FILTER_VARIANTS {
     path vcf
 
     output:
-    path "filtered.vcf"
+    path "filtered.vcf.gz"
+    path "filtered.vcf.gz.csi"
 
     script:
     """
-    bcftools filter -i 'QUAL>20' ${vcf} -o filtered.vcf
+    bcftools filter \
+        -i 'DP>=10 && MQ>=30 && QUAL>=30' \
+        ${vcf} \
+        -Oz \
+        -o filtered.vcf.gz
+
+    bcftools index filtered.vcf.gz
     """
 }
